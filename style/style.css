@@ -159,6 +159,11 @@ html {
     border: 3px solid var(--dark-green);
     margin: 0 auto; 
 }
+
+.border-green{
+    border-color: darkgreen;
+    border-style: solid;
+}
 @media (max-width: 1000px) {
     .navbar {
         display: none;
