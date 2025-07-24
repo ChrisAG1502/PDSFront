@@ -7,6 +7,8 @@
 body,
 html {
     font-family: "Quicksand", sans-serif;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -135,7 +137,7 @@ html {
     transition: all 0.3s ease;
 }
 
-.divider{
+.divider {
     height: 3px;
     background-color: darkgreen;
     border: none;
@@ -143,7 +145,7 @@ html {
     margin: 0 auto;
 }
 
-.text-capitalize{
+.text-capitalize {
     font-weight: bold;
 }
 
@@ -157,13 +159,31 @@ html {
     border-radius: 50%;
     color: var(--dark-green);
     border: 3px solid var(--dark-green);
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
-.border-green{
+.border-green {
     border-color: darkgreen;
     border-style: solid;
 }
+
+#login-img {
+    width: 100%;
+    height: 50rem;
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    min-height: calc(100vh - 143.98px);
+}
+
+footer {
+    flex-shrink: 0;
+}
+
 @media (max-width: 1000px) {
     .navbar {
         display: none;
@@ -173,7 +193,7 @@ html {
         width: 15rem;
     }
 
-    #aboutUsPhoto{
+    #aboutUsPhoto {
         display: none;
     }
 
