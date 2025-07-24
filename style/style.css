@@ -92,7 +92,7 @@ html {
 .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
-    border-radius: 0;
+    border-radius: 15px;
 }
 
 .dropdown-item {
