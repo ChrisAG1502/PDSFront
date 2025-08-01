@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentra Servicios - Salud, Hogar y más</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --accent-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            padding: 1.2rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+        }
+        
+        .category-btn {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-btn i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .service-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .rating {
+            color: #ffc107;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .btn-contact {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+        }
+        
+        .btn-contact:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Search -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Encuentra el servicio que necesitas</h1>
+                <p class="lead">Profesionales confiables para salud, hogar, educación y más</p>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="form-control search-input" placeholder="¿Qué servicio estás buscando? Ej: Plomero, Enfermera, Clases...">
+                <button class="btn search-btn">Buscar <i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="d-flex flex-wrap justify-content-center mt-4">
+                <button class="category-btn"><i class="fas fa-medkit"></i> Salud</button>
+                <button class="category-btn"><i class="fas fa-home"></i> Hogar</button>
+                <button class="category-btn"><i class="fas fa-graduation-cap"></i> Educación</button>
+                <button class="category-btn"><i class="fas fa-car"></i> Transporte</button>
+                <button class="category-btn"><i class="fas fa-utensils"></i> Alimentos</button>
+                <button class="category-btn"><i class="fas fa-paint-brush"></i> Belleza</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Featured Services -->
+        <section class="my-5">
+            <h2 class="section-title">Servicios destacados</h2>
+            <div class="row">
+                <!-- Service Card 1 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Enfermera a domicilio">
+                            <span class="service-category">Salud</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Enfermera a domicilio</h5>
+                            <p class="card-text">Cuidados profesionales para pacientes en casa. Inyecciones, curaciones y más.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-muted ms-1">(24)</span>
+                                </div>
+                                <div class="price">$25/h</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Plomería profesional">
+                            <span class="service-category">Hogar</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Plomería profesional</h5>
+                            <p class="card-text">Reparación de fugas, instalaciones y mantenimiento de tuberías. Servicio garantizado.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-muted ms-1">(18)</span>
+                                </div>
+                                <div class="price">$35/h</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Clases de matemáticas">
+                            <span class="service-category">Educación</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Clases de matemáticas</h5>
+                            <p class="card-text">Profesor con 10 años de experiencia en enseñanza de álgebra, cálculo y geometría.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-muted ms-1">(32)</span>
+                                </div>
+                                <div class="price">$20/h</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular Categories -->
+        <section class="my-5">
+            <h2 class="section-title">Categorías populares</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-medkit fa-3x mb-3" style="color: #e74a3b;"></i>
+                        <h5>Salud</h5>
+                        <p class="text-muted">Médicos, enfermeras, terapias</p>
+                        <small class="text-primary">120 servicios</small>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-home fa-3x mb-3" style="color: #1cc88a;"></i>
+                        <h5>Hogar</h5>
+                        <p class="text-muted">Plomería, electricidad, limpieza</p>
+                        <small class="text-primary">85 servicios</small>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-graduation-cap fa-3x mb-3" style="color: #36b9cc;"></i>
+                        <h5>Educación</h5>
+                        <p class="text-muted">Clases, tutorías, idiomas</p>
+                        <small class="text-primary">64 servicios</small>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-paint-brush fa-3x mb-3" style="color: #f6c23e;"></i>
+                        <h5>Belleza</h5>
+                        <p class="text-muted">Peluquería, estética, masajes</p>
+                        <small class="text-primary">47 servicios</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- More Services -->
+        <section class="my-5">
+            <h2 class="section-title">Más servicios disponibles</h2>
+            <div class="row">
+                <!-- Service Card 4 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Limpieza de hogar">
+                            <span class="service-category">Hogar</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Limpieza de hogar</h5>
+                            <p class="card-text">Servicio profesional de limpieza para tu casa u oficina. Productos ecológicos.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-muted ms-1">(15)</span>
+                                </div>
+                                <div class="price">$30/h</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Clases de inglés">
+                            <span class="service-category">Educación</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Clases de inglés</h5>
+                            <p class="card-text">Aprende inglés con método conversacional. Todos los niveles. Preparación para exámenes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-muted ms-1">(28)</span>
+                                </div>
+                                <div class="price">$22/h</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Transporte privado">
+                            <span class="service-category">Transporte</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Transporte privado</h5>
+                            <p class="card-text">Servicio de transporte seguro y puntual. Viajes locales y entre ciudades.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-muted ms-1">(19)</span>
+                                </div>
+                                <div class="price">$0.50/km</div>
+                            </div>
+                            <button class="btn btn-contact w-100 mt-3">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary">Ver más servicios <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Encuentra Servicios</h5>
+                    <p>La plataforma líder para encontrar profesionales confiables en todas las áreas.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Servicios</a></li>
+                        <li><a href="#" class="text-white">Cómo funciona</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Categorías</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Salud</a></li>
+                        <li><a href="#" class="text-white">Hogar</a></li>
+                        <li><a href="#" class="text-white">Educación</a></li>
+                        <li><a href="#" class="text-white">Transporte</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@encuentraservicios.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +1 234 567 890</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Encuentra Servicios. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
