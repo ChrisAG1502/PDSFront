@@ -465,7 +465,7 @@
                 const maxScroll = track.scrollWidth - containerWidth;
 
                 if (currentPosition > -maxScroll) {
-                    currentPosition -= cardWidth * 1; // Mover 3 tarjetas a la vez
+                    currentPosition -= cardWidth * 1; // Mover 1 tarjeta a la vez
                     if (currentPosition < -maxScroll) {
                         currentPosition = -maxScroll;
                     }
@@ -475,7 +475,7 @@
 
             prevBtn.addEventListener('click', function () {
                 if (currentPosition < 0) {
-                    currentPosition += cardWidth * 3; // Mover 3 tarjetas a la vez
+                    currentPosition += cardWidth * 1; // Mover 1 tarjeta a la vez
                     if (currentPosition > 0) {
                         currentPosition = 0;
                     }
