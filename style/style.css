@@ -248,7 +248,6 @@ html {
 .slider-card {
     flex: 0 0 auto;
     width: 250px;
-    /* Ancho de cada tarjeta */
     transition: transform 0.3s ease;
 }
 
@@ -296,30 +295,49 @@ html {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.service-category {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
 .card-img-top {
     height: 150px;
     object-fit: cover;
     width: 100%;
 }
 
-.card-text{
+.card-text {
     height: 4rem;
 }
 
+.green-section {
+    background-color: #28a745;
+}
 
+.stat-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
 
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 100%;
+}
 
 footer {
     flex-shrink: 0;

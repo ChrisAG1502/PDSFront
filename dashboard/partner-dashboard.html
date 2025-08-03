@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Dashboard | Citas</title>
+
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg green-section bg-light">
+        <div class="container">
+            <a href="#" class="navbar-brand">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="fa-solid fa-circle-user text-black fs-1"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <!-- Versión móvil - opciones visibles -->
+                <ul class="navbar-nav me-auto d-lg-none p-0">
+                    <li class="nav-item py-0">
+                        <a class="nav-link fs-5" href="/user-account">Cuenta</a>
+                    </li>
+                    <li class="nav-item py-0">
+                        <a class="nav-link fs-5" href="/logout">Cerrar Sesión</a>
+                    </li>
+                </ul>
+
+                <!-- Versión escritorio - icono de cuenta con dropdown -->
+                <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white fs-5" href="#" role="button" data-bs-toggle="dropdown" id="dr">
+                            <i class="fa-solid fa-circle-user text-black fs-2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="/user-account">Cuenta</a></li>
+                            <li><a class="dropdown-item" href="/logout">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="welcome-message bg-light">
+        <div class="justify-content-center text-center mb-4">
+            <h4 class="text-capitalize fs-3 fs-md-2">Bienvenido Christian</h4>
+            <p class="mb-0 fs-5 fs-md-4">Panel de Control de Partner</p>
+        </div>
+    </section>
+    <section class="new-announce bg-light">
+        <div class="d-flex container">
+            <button type="button" class="btn btn-danger btn-lg py-3 w-25"">Publicar Anuncio</button>
+        </div>
+    </section>
+
+    <!--Stats Container-->
+    <section class="main-container h-100 mt-3 mb-3 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Sección de estadísticas numéricas -->
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <!-- Anuncios publicados -->
+                        <div class="col-md-6">
+                            <div class="stat-card p-4 bg-white text-center">
+                                <div class="stat-icon text-primary">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="stat-value">24</div>
+                                <div class="stat-label">Anuncios publicados</div>
+                            </div>
+                        </div>
+
+                        <!-- Vistas totales -->
+                        <div class="col-md-6">
+                            <div class="stat-card p-4 bg-white text-center">
+                                <div class="stat-icon text-success">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="stat-value">1,842</div>
+                                <div class="stat-label">Vistas totales</div>
+                            </div>
+                        </div>
+
+                        <!-- Anuncio con más vistas -->
+                        <div class="col-md-6 text-center">
+                            <div class="stat-card p-4 bg-white">
+                                <div class="stat-icon text-warning">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-value">"Consulta de Nutrición"</div>
+                                <div class="stat-label">Anuncio con más vistas</div>
+                            </div>
+                        </div>
+
+                        <!-- Vistas del anuncio destacado -->
+                        <div class="col-md-6">
+                            <div class="stat-card p-4 bg-white text-center">
+                                <div class="stat-icon text-info">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-value">328</div>
+                                <div class="stat-label">Vistas del anuncio destacado</div>
+                            </div>
+                        </div>
+
+                        <!-- Citas agendadas -->
+                        <div class="col-12">
+                            <div class="stat-card p-4 bg-white text-center">
+                                <div class="stat-icon text-danger">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-value">156</div>
+                                <div class="stat-label">Citas agendadas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección del gráfico de pastel -->
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h5 class="text-center mb-4">Distribución de Vistas</h5>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="published-announces">
+        <div class="mb-4 pt-4 container">
+                <p class="fs-4 text-capitalize">Anuncios Publicados</p>
+                <div class="divider"></div>
+            </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Datos para el gráfico
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Anuncio destacado', 'Otros anuncios', 'Citas agendadas'],
+                datasets: [{
+                    data: [328, 1514, 156],
+                    backgroundColor: [
+                        '#FFC107', // Amarillo para el anuncio destacado
+                        '#28A745', // Verde para otros anuncios
+                        '#DC3545'  // Rojo para citas agendadas
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = Math.round((value / total) * 100);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
