@@ -54,7 +54,8 @@
     </section>
     <section class="new-announce bg-light">
         <div class="d-flex container">
-            <button type="button" class="btn btn-danger btn-lg py-3 w-25"">Publicar Anuncio</button>
+            <button type="button" class="btn custom-btn-check btn-lg py-3 w-25 mt-2 mb-2"">Publicar Anuncio</button>
+            <button type="button" class="btn btn-secondary btn-lg py-3 w-25 m-2"">Administrar Citas</button>
         </div>
     </section>
 
@@ -64,14 +65,14 @@
             <div class="row g-4">
                 <!-- Sección de estadísticas numéricas -->
                 <div class="col-lg-6">
-                    <div class="row g-4">
+                    <div class="row g-4 ">
                         <!-- Anuncios publicados -->
                         <div class="col-md-6">
                             <div class="stat-card p-4 bg-white text-center">
                                 <div class="stat-icon text-primary">
                                     <i class="fas fa-bullhorn"></i>
                                 </div>
-                                <div class="stat-value">24</div>
+                                <div class="text-capitalize fs-2">24</div>
                                 <div class="stat-label">Anuncios publicados</div>
                             </div>
                         </div>
@@ -82,7 +83,7 @@
                                 <div class="stat-icon text-success">
                                     <i class="fas fa-eye"></i>
                                 </div>
-                                <div class="stat-value">1,842</div>
+                                <div class="text-capitalize fs-2">1,842</div>
                                 <div class="stat-label">Vistas totales</div>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
                                 <div class="stat-icon text-warning">
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <div class="stat-value">"Consulta de Nutrición"</div>
+                                <div class="text-capitalize fs-2">"Consulta de Nutrición"</div>
                                 <div class="stat-label">Anuncio con más vistas</div>
                             </div>
                         </div>
@@ -104,7 +105,7 @@
                                 <div class="stat-icon text-info">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
-                                <div class="stat-value">328</div>
+                                <div class="text-capitalize fs-2">328</div>
                                 <div class="stat-label">Vistas del anuncio destacado</div>
                             </div>
                         </div>
@@ -115,7 +116,7 @@
                                 <div class="stat-icon text-danger">
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
-                                <div class="stat-value">156</div>
+                                <div class="text-capitalize fs-2">156</div>
                                 <div class="stat-label">Citas agendadas</div>
                             </div>
                         </div>
@@ -155,7 +156,7 @@
                         '#28A745', // Verde para otros anuncios
                         '#DC3545'  // Rojo para citas agendadas
                     ],
-                    borderWidth: 1
+                    borderWidth: 0
                 }]
             },
             options: {

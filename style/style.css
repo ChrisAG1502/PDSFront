@@ -321,11 +321,6 @@ html {
     margin-bottom: 1rem;
 }
 
-.stat-value {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
 .stat-label {
     color: #6c757d;
     font-size: 1rem;
@@ -337,6 +332,16 @@ html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     height: 100%;
+}
+
+.custom-btn-check{
+    background-color: green;
+    color: white;
+}
+
+.custom-btn-check:hover{
+    background-color: rgba(1, 87, 1, 0.797) ;
+    color: white;
 }
 
 footer {
